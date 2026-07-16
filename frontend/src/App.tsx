@@ -8,10 +8,24 @@ import { CollisionCenter } from '@/pages/CollisionCenter';
 import { AIAgents } from '@/pages/AIAgents';
 import { MissionPlanner } from '@/pages/MissionPlanner';
 import { Settings } from '@/pages/Settings';
+import { Toaster } from 'sonner';
 
 function App() {
   return (
     <BrowserRouter>
+    <Toaster 
+      toastOptions={{ 
+        className: "!glass-panel !bg-surface-container/90 !rounded-none !text-md !font-bold !text-primary-container !border-1",
+        classNames: {
+          toast: "!text-primary-container !border-border-panel",
+          success: "!text-status-success !border-status-success",
+          warning: "!text-status-warning !border-status-warning",
+          error: "!text-status-emergency !border-status-emergency",
+        } 
+        }} 
+      position="top-right" 
+      offset={{ top: '4em', right: "16px", left: "16px" }} 
+       />
       <Routes>
         <Route path="/" element={<MainLayout />}>
           <Route index element={<Dashboard />} />

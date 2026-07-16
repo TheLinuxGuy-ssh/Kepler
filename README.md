@@ -533,3 +533,11 @@ This project is licensed under the **MIT License**.
 Developed and maintained by **7-Blocks**.
 
 We appreciate every contribution that helps make Kepler a better open-source platform for autonomous space traffic management.
+
+---
+
+<div align="center">
+
+⭐ If you found this project helpful, consider giving it a star. ⭐
+
+</div>

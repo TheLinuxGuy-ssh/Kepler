@@ -1,6 +1,8 @@
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import { MainLayout } from '@/components/layouts/MainLayout';
+import { MarketingLayout } from '@/components/layouts/MarketingLayout';
 import { LandingPage } from '@/pages/LandingPage';
+import { AboutPage } from '@/pages/AboutPage';
 import { Dashboard } from '@/pages/Dashboard';
 import { SpaceTraffic } from '@/pages/SpaceTraffic';
 import { Satellites } from '@/pages/Satellites';
@@ -15,7 +17,10 @@ function App() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<LandingPage />} />
+        <Route element={<MarketingLayout />}>
+          <Route path="/" element={<LandingPage />} />
+          <Route path="/about" element={<AboutPage />} />
+        </Route>
         <Route path="/dashboard" element={<MainLayout />}>
           <Route index element={<Dashboard />} />
           <Route path="space-traffic" element={<SpaceTraffic />} />

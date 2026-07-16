@@ -132,8 +132,11 @@ def test_seed_database_execution(mock_session_local, mock_mongo_client):
     assert len(fake_db["orbitalElements"].docs) == 15
     
     # Telemetry should be created for each active/degraded satellite
-    # Since status can be ACTIVE, DEGRADED or INACTIVE, let's verify telemetry is seeded
-    assert len(fake_db["telemetry"].docs) > 0
+    eligible = sum(
+        doc["status"] in {"ACTIVE", "DEGRADED"}
+        for doc in fake_db["satellites"].docs
+    )
+    assert len(fake_db["telemetry"].docs) == eligible * 5
     # Telemetry count should be 5 * active/degraded satellites
     
     # Conjunctions seeded: min(5, len(satellites), len(debris)) = min(5, 10, 5) = 5

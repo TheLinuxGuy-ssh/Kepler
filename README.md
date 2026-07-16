@@ -1,6 +1,6 @@
 <div align="center">
 <h1>KEPLER 🚀</h1>
-
+q
 ### An AI-Powered Autonomous Space Traffic Management Platform
 </div>
 
@@ -27,6 +27,10 @@
 <a href="https://github.com/Amayyas"><img src="https://github.com/Amayyas.png" width="50px" style="border-radius:50%;margin:5px;" alt="Amayyas" /></a>
 <a href="https://github.com/tapheret2"><img src="https://github.com/tapheret2.png" width="50px" style="border-radius:50%;margin:5px;" alt="tapheret2" /></a>
 <a href="https://github.com/PushkarP-404"><img src="https://github.com/PushkarP-404.png" width="50px" style="border-radius:50%;margin:5px;" alt="PushkarP-404" /></a>
+<a href="https://github.com/kalpitt"><img src="https://github.com/kalpitt.png" width="50px" style="border-radius:50%;margin:5px;" alt="kalpitt" /></a>
+<a href="https://github.com/shwetakanth09"><img src="https://github.com/shwetakanth09.png" width="50px" style="border-radius:50%;margin:5px;" alt="shwetakanth09" /></a>
+<a href="https://github.com/TheLinuxGuy-ssh"><img src="https://github.com/TheLinuxGuy-ssh.png" width="50px" style="border-radius:50%;margin:5px;" alt="TheLinuxGuy-ssh" /></a>
+
 </div>
 <!-- CONTRIBUTORS_END -->
 

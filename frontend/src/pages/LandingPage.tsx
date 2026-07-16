@@ -110,10 +110,16 @@ function OrbitalField({ prefersReducedMotion }: OrbitalFieldProps) {
 
 interface NavBarProps {
   onLaunchDashboard: () => void;
-  scrolled: boolean;
 }
 
-function NavBar({ onLaunchDashboard, scrolled }: NavBarProps) {
+function NavBar({ onLaunchDashboard }: NavBarProps) {
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 12);
+    window.addEventListener("scroll", onScroll);
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
 
   const links = [
     { label: "Product", href: "#product" },
@@ -373,7 +379,17 @@ export const LandingPage: React.FC = () => {
   useInjectFonts();
   const navigate = useNavigate();
   const [prefersReducedMotion, setPrefersReducedMotion] = useState(false);
-  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    // Dynamic overflow modification to support page anchors scrolling
+    document.body.style.overflow = "auto";
+    document.body.style.overflowX = "hidden";
+    
+    return () => {
+      document.body.style.overflow = "hidden";
+      document.body.style.overflowX = "hidden";
+    };
+  }, []);
 
   useEffect(() => {
     const mediaQuery = window.matchMedia("(prefers-reduced-motion: reduce)");
@@ -383,20 +399,13 @@ export const LandingPage: React.FC = () => {
     return () => mediaQuery.removeEventListener("change", listener);
   }, []);
 
-  const handleScroll = (e: React.UIEvent<HTMLDivElement>) => {
-    setScrolled(e.currentTarget.scrollTop > 12);
-  };
-
   const handleLaunch = () => {
     navigate("/dashboard");
   };
 
   return (
-    <div
-      onScroll={handleScroll}
-      className="bg-[#060A14] h-screen overflow-y-auto overflow-x-hidden text-[#E7EBF3] select-none scroll-smooth"
-    >
-      <NavBar onLaunchDashboard={handleLaunch} scrolled={scrolled} />
+    <div className="bg-[#060A14] min-h-screen text-[#E7EBF3] overflow-x-hidden select-none">
+      <NavBar onLaunchDashboard={handleLaunch} />
       <Hero onLaunchDashboard={handleLaunch} prefersReducedMotion={prefersReducedMotion} />
       <HowItWorks />
       <Reliability />

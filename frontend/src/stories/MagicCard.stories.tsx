@@ -85,13 +85,14 @@ export const Default: Story = {
   },
 };
 
-export const PurplePinkGradient: Story = {
+
+
+export const Orb: Story = {
   args: {
     ...baseArgs,
-    mode: "gradient",
-    gradientFrom: "#8B5CF6",
-    gradientTo: "#EC4899",
-    gradientSize: 260,
+    mode: "orb",
+    glowFrom: "#8B5CF6",
+    glowTo: "#EC4899",
     children: (
       <div className="flex h-full items-center justify-center text-lg font-semibold">
         Purple-Pink Orb
@@ -99,8 +100,6 @@ export const PurplePinkGradient: Story = {
     ),
   },
 };
-
-
 
 export const BlueOrb: Story = {
   args: {

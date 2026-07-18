@@ -136,34 +136,7 @@ function HowItWorks() {
 
 /* Reliability strip */
 
-function Reliability() {
-  const stats = [
-    { value: "12,400+", label: "objects tracked" },
-    { value: "99.982%", label: "conjunction recall" },
-    { value: "< 40ms", label: "decision latency" },
-    { value: "0", label: "unresolved conflicts, to date" },
-  ];
 
-  return (
-    <section
-      id="reliability"
-      className="py-20 px-6 section-rule bg-[#0C1220]"
-    >
-      <div className="max-w-[1180px] mx-auto grid grid-cols-2 lg:grid-cols-4 gap-8">
-        {stats.map((s) => (
-          <div key={s.label}>
-            <div className="font-display-lg font-bold text-3xl text-[#4FE0C8]">
-              {s.value}
-            </div>
-            <div className="font-body-ui text-xs text-[#8892A6] mt-1.5">
-              {s.label}
-            </div>
-          </div>
-        ))}
-      </div>
-    </section>
-  );
-}
 
 /* Page */
 
@@ -187,7 +160,7 @@ export const LandingPage: React.FC = () => {
     <div className="select-none">
       <Hero />
       <HowItWorks />
-      <Reliability />
+      
     </div>
   );
 };

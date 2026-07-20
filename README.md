@@ -3,7 +3,6 @@
 An AI-Powered Autonomous Space Traffic Management Platform
 </div>
 
-
 <p align="center">
   <img src="https://img.shields.io/badge/Space-Tech-blue?style=for-the-badge" />
   <img src="https://img.shields.io/badge/AI-Powered-green?style=for-the-badge" />

@@ -3,6 +3,8 @@ import { NavLink, Outlet, useLocation } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import { MaterialIcon } from '@/components/MaterialIcon';
 import { useUIStore } from '@/store/uiStore';
+import { DynamicBackground } from '@/components/DynamicBackground/DynamicBackground';
+import { BackgroundThemeSelector } from '@/components/DynamicBackground/BackgroundThemeSelector';
 
 export const MainLayout: React.FC = () => {
   const {
@@ -72,6 +74,9 @@ export const MainLayout: React.FC = () => {
 
   return (
     <div className="relative w-screen h-screen overflow-hidden font-body-ui bg-bg-deep-space text-on-surface select-none">
+      {/* Dynamic animated background */}
+      <DynamicBackground />
+
       {/* Scanline CRT overlay filter */}
       <div className="scanlines" />
 
@@ -204,6 +209,7 @@ export const MainLayout: React.FC = () => {
                 {utcTime}
               </div>
               <div className="flex items-center gap-4">
+                <BackgroundThemeSelector />
                 <button
                   onClick={toggleRightDrawer}
                   className={`transition-ui cursor-pointer p-2 min-w-[44px] min-h-[44px] flex items-center justify-center ${rightDrawerOpen ? 'text-primary-container drop-shadow-[0_0_8px_rgba(0,229,255,0.6)]' : 'text-primary hover:text-primary-fixed'}`}
